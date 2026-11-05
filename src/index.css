@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-nora-blush/20 text-nora-wine antialiased selection:bg-nora-pink selection:text-nora-burgundy;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+
+  .font-display {
+    font-family: 'Italiana', 'Cormorant Garamond', serif;
+  }
+
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FCEAF3;
+}
+::-webkit-scrollbar-thumb {
+  background: #9E4052;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #781430;
+}
+
+/* Subtle glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 211, 238, 0.4);
+}
+
+.glass-burgundy {
+  background: rgba(120, 20, 48, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 211, 238, 0.2);
+}
+
+/* Subtle shimmer animation for premium cards */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
